@@ -1,1 +1,5 @@
-port=zzdcz
+data:
+  env: localhost-dev-edit888
+  user:
+    username: zzdcz-dev999
+    password: password-dev
