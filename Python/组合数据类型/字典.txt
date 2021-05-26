@@ -1,0 +1,13 @@
+定义：
+	d = {} d = dict()
+操作函数和方法：
+	len(d)
+	del d[k] 删除一个键值对
+	k in d 
+	d.keys()
+	d,values()
+	d.items() 返回所有键值对
+	d.get(k,<default>)返回K相应的值，不存在则返回default
+	d.pop(k,<default>)取出K相应的值，不存在则返回default
+	d.popitem()随机取出一个键值对，以元组形式返回
+	d.clear()删除所有键值对

@@ -1,0 +1,18 @@
+基本使用：
+	c = wordcloud.WordCloud(<参数>)
+	c.generate(s)
+	c.to_file(文件名)
+
+常用配置参数：
+	width:图片宽，默认400
+	height:图片高，默认200
+	min_font_size:指定词云中字体的最小字号
+	max_font_size:指定词云中字体的最大字号
+	font_step:指定词云中字体字号的步进间隔，默认1
+	font_path:指定字体文件的路径，默认None
+	max_words:指定词云现显示的最大单词数量，默认200
+	stop_words:指定词云不显示的单词列表
+	background_color:指定词云图片背景颜色，默认黑色
+	mask:指定词云形状
+		from imageio import imread
+		mk = imread("1.png")

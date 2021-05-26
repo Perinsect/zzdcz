@@ -1,0 +1,34 @@
+序列类型：字符串，元组，列表
+
+操作符：
+	in
+	not in
+	+  拼接
+	s*n  复制
+	s[i] 索引
+  	s[i:j],s[i:j:k]  切片
+
+序列类型通用方法和函数：
+	len(s)
+	min(s)  s中元素需要可比较
+	max(s)  s中元素需要可比较
+	s.index(x),s.index(x,i,j)从i到j范围返回x的索引
+	s.count(x)
+字符串;
+	
+元组：不可更改
+	定义：t = (),t = tuple(),t = "ew",4
+	操作：无
+列表：
+	定义：ls = [1,e,5],t = [],ls = list()
+	操作：  ls[i] = x 
+		del ls[i],del ls[i:j]
+		ls.append(x)
+		ls.clear()
+		ls.copy()
+		ls.insert(i,x)
+		ls.pop(i)
+		ls.remove(x)
+		ls.reverse()
+
+

@@ -1,0 +1,18 @@
+画笔控制函数：
+	turtle.penup(),turtle.pu()  抬起画笔
+	turtle.pendown(),turtle.pd()  放下画笔
+	turtle.pensize(width),turtle.width(width)  画笔宽度
+	turtle.pencolor(color)  画笔颜色,color为颜色字符串或RGB值
+
+运动控制函数：
+	turtle.forward(d),turtle.fd(d)  前进
+	turtle.circle（r,extend）  默认圆心在画笔左侧r距离的位置，extent为绘制角度，默认360
+
+方向控制函数：
+	turtle.setheading(angle),turtle.seth(angle)  angle行进方向绝对角度
+	turtle.left(angle)
+	turtle.right(angle)
+
+turtle.colormode(mode)切换RGB色彩模式
+	1.0小数模式
+	255整数模式

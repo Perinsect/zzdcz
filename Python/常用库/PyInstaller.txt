@@ -1,0 +1,10 @@
+将.py文件转换成可执行文件
+pyinstall -F 文件名.py
+
+
+常用参数：
+	-h:帮助
+	--clean:清理打包过程中的临时文件
+	-D,--onedir:
+	-F,onefile:
+	-i 图标文件名.ico

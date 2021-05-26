@@ -1,0 +1,11 @@
+基本随机函数：
+	seed()初始化给定的随机数种子，默认为当前系统时间
+	random()生成一个[0.0,1.0)之间的随机小数
+	相同的种子总能得到相同的随机数
+扩展随机函数：
+	randint(a,b)指定范围的整数随机数  [a,b]
+	getrandbits(k)返回k比特长的随机整数
+	uniform(a,b) 指定范围的小数随机数  [a,b]
+	randrange()
+	choic(seq) 从seq序列中获取随机数
+	shuffle(seq) 打乱序列，返回序列
