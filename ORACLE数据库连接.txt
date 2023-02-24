@@ -1,0 +1,20 @@
+jdbc:oracle:thin:@192.168.80.10:1521:ORCL
+
+
+jdbc:表示采用jdbc方式连接数据库
+oracle:表示连接的是oracle数据库
+thin:表示连接时采用thin模式(oracle中有两种模式)
+
+jdbc:oralce:thin:是一个jni方式的命名
+
+@表示地址
+1521和orcl表示端口和数据库名
+
+@192.168.3.98:1521:orcl整个是一块
+也就是说是这样[jdbc]:[oracle]:[thin]:[@192.168.3.98:1521:orcl]
+
+
+oci和thin是Oracle提供的两套Java访问Oracle数据库方式。
+
+thin是一种瘦客户端的连接方式，即采用这种连接方式不需要安装oracle客户端,只要求classpath中包含jdbc驱动的jar包就行。thin就是纯粹用Java写的ORACLE数据库访问接口。
+oci是一种胖客户端的连接方式，即采用这种连接方式需要安装oracle客户端。oci是Oracle Call Interface的首字母缩写，是ORACLE公司提供了访问接口，就是使用Java来调用本机的Oracle客户端，然后再访问数据库，优点是速度快，但是需要安装和配置数据库。
