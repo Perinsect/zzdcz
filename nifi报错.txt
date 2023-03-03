@@ -1,0 +1,8 @@
+ERROR [Timer-Driven Process Thread-9] o.a.n.p.standard.QueryDatabaseTable QueryDatabaseTable[id=84f0cbfb-9c7b-356d-2105-c484cac56caa] 
+Failed to process session due to org.apache.nifi.processor.exception.ProcessException: 
+Unable to communicate with database in order to determine column types: 
+org.apache.nifi.processor.exception.ProcessException: 
+Unable to communicate with database in order to determine column types
+
+
+可能原因 所查的表或者视图不存在

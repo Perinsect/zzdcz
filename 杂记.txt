@@ -1,9 +1,0 @@
-解除端口占用
-查看占用端口的进程pid  netstat -aon|findstr "端口号"
-根据pid关闭进程        taskkill /pid 进程号 /f
-
-清楚DNS缓存
-ipconfig /flushdns
-
-host文件位置
-c:\windows\system32\drivers\etc
