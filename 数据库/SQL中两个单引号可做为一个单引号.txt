@@ -1,0 +1,3 @@
+sql中两个单引号可做为一个单引号
+
+select zyqk from t_sgqk where zyqk like '%''%' 
