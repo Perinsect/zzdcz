@@ -1,0 +1,6 @@
+geojson网址
+http://datav.aliyun.com/portal/school/atlas/area_selector
+
+
+支付宝api
+https://opendocs.alipay.com/open/028r8t?scene=22

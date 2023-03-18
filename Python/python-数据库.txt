@@ -1,0 +1,27 @@
+django 命令
+python manage.py startapp app名  ##创建app
+python manage.py makemigrations    #将类转换成数据表结构
+python manage.py  migrate               #根据上一句代码生成数据表
+python manage.py runserver  ##服务启动
+
+
+python连接数据库报错
+mysql.connector.errors.NotSupportedError: Authentication plugin 'caching_sha2_password' is not supported
+原因：MySQL 是 8.0 版本，密码插件验证方式发生了变化，早期版本为 mysql_native_password，8.0 版本为 caching_sha2_password，所以需要做些改变
+解决方案一：
+安装新的插件
+python -m pip install MySQL-connector-python   
+解决方案二：
+连接配置中加入auth_plugin="mysql_native_password"
+        mydb = mysql.connector.connect(
+            host="127.0.0.1",
+            user="root",
+            passwd="123456",
+            database="xdb",
+            auth_plugin="mysql_native_password"
+        )
+解决方案三：
+登录mysql，将root 用户的加密方式修改 mysql_native_password
+alter user 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '123456'
+查看加密方式
+select user,host,plugin from mysql.user

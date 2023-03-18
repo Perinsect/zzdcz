@@ -1,0 +1,47 @@
+CentOS 7.0默认使用的是firewall作为防火墙
+
+		查看firewalld状态
+
+		systemctl status firewalld
+
+		关闭：
+
+		systemctl stop firewalld
+
+		启动：
+
+		systemctl start firewalld
+
+		查看当前所有tcp端口：
+
+		netstat -ntlp
+
+		查询是否开启80端口则：
+
+		firewall-cmd --query-port=80/tcp
+
+		查看所有打开的端口：
+
+		firewall-cmd --zone=public --list-ports
+
+		开放 tcp连接的80端口 永久生效：
+
+		firewall-cmd --zone=public --add-port=80/tcp --permanent
+
+		开放 tcp连接的10001-10010范围i端口 永久生效：
+
+		firewall-cmd --zone=public --add-port=10001-10010/tcp --permanent
+
+		指定某台服务器能访问：
+
+		firewall-cmd --permanent --add-rich-rule="rule family="ipv4" source address="10.10.10.1" port protocol="tcp" port="3306" accept"
+
+		禁止外部访问80端口：
+
+		firewall-cmd --zone=public --remove-port=80/tcp --permanent
+
+		重新载入(开启或关闭操作后都需要执行，让其生效)：
+
+		firewall-cmd --reload
+
+非CentOS 7.0 可能使用“iptables”按照“iptables”配置开放端口即可

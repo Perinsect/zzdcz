@@ -1,0 +1,28 @@
+#!/bin/bash
+
+JAVA_CMD="/opt/jdk1.8.0_91/bin/java"
+SERVICE_HOME="/opt/coc-fire"
+
+CLASSPATH="$SERVICE_HOME/conf/."
+##加载启动项目所需的依赖jar，多个jar路径之间的分割符会因平台的不同存在差异，在window上用分号";“分割，在linux上用冒号”:"分割
+for jarFile in $SERVICE_HOME/libs/*.jar; do
+    CLASSPATH="$CLASSPATH:$jarFile"
+done
+
+echo "JAVA_CMD: $JAVA_CMD"
+echo "SERVICE_HOME: $SERVICE_HOME"
+echo "CLASSPATH: $CLASSPATH"
+
+cd $SERVICE_HOME
+
+##Java -cp 依赖jar或者是依赖jar库路径 主类全限定名类名
+$JAVA_CMD -Duser.timezone=GMT+8 -cp $CLASSPATH com.dscomm.coc.CocFireApplication >> $SERVICE_HOME/logs/startup.log 2>&1 &
+echo "Start coc-fire service success."
+
+
+##  >>
+##以追加的方式重定向
+## 2>&1 &
+##bash中0，1，2三个数字分别代表STDIN_FILENO、STDOUT_FILENO、STDERR_FILENO，即标准输入（一般是键盘），标准输出（一般是显示屏，准确的说是用户终端控制台），标准错误（出错信息输出）。
+##1前面的&就是为了让bash将1解释成标准输出而不是文件1。至于最后一个&，则是让bash在后台执行。
+##Java -cp 依赖jar或者是依赖jar库路径 主类全限定名类名

@@ -1,0 +1,52 @@
+fastjson maven
+
+<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+<dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>fastjson</artifactId>
+    <version>1.2.62</version>
+</dependency>
+
+String userStr = "{\"age\":18,\"name\":\"张三\",\"sex\":\"男\"}";
+User user = new User("张三", "男", 18);
+
+1、Java对象–>JSON对象
+
+		JSONObject jsonObject = (JSONObject) JSONObject.toJSON(user);
+
+
+2、Java对象–>JSON字符串
+
+        String userStr = JSONObject.toJSONString(user);
+
+
+3、JSON对象–>JSON字符串
+
+        //先转成JSON对象
+        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(user);
+        //JSON对象转换为JSON字符串
+        String jsonString = jsonObject.toJSONString();
+
+4、JSON对象–>Java对象
+
+        //先转成JSON对象
+        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(user1);
+        //JSON对象转换成Java对象
+        User user = JSONObject.toJavaObject(jsonObject, User.class);
+
+
+5、JSON字符串–>JSON对象
+ 
+        //JSON字符串转换成JSON对象
+        JSONObject jsonObject1 = JSONObject.parseObject(userStr);
+
+6、JSON字符串–>Java对象
+
+        //JSON字符串转换成Java对象
+        User user = JSONObject.parseObject(userStr, User.class);
+
+7、JSON对象添加属性
+
+		JSONObject jsonObj = JSONObject.parseObject(jsonStr1);
+        // 添加键值对
+        jsonObj.put("score", 99);
